@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\MicroProject.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\MicroProject.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Thu May  1 19:12:51 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Thu May  1 22:27:32 2025
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -14,13 +14,17 @@ Functions with no stack information
 </H3><UL>
  <LI><a href="#[37]">__user_initial_stackheap</a>
  <LI><a href="#[3b]">LDR_Init</a>
- <LI><a href="#[40]">LDR_Update</a>
+ <LI><a href="#[45]">LDR_Update</a>
  <LI><a href="#[3a]">MQ2_Init</a>
- <LI><a href="#[3f]">MQ2_Update</a>
- <LI><a href="#[41]">DHT11_READ</a>
- <LI><a href="#[3c]">DISPLAY_TEMP</a>
- <LI><a href="#[3d]">DISPLAY_HUM</a>
- <LI><a href="#[3e]">UPDATE_Temp_Humidity</a>
+ <LI><a href="#[46]">MQ2_Update</a>
+ <LI><a href="#[47]">TIMER2_INIT</a>
+ <LI><a href="#[41]">TIMER3_INIT</a>
+ <LI><a href="#[48]">TIMER4_INIT</a>
+ <LI><a href="#[3c]">DHT11_READ</a>
+ <LI><a href="#[3e]">DISPLAY_TEMP</a>
+ <LI><a href="#[3f]">DISPLAY_HUM</a>
+ <LI><a href="#[3d]">UPDATE_Temp_Humidity</a>
+ <LI><a href="#[40]">UPDATE_Modes</a>
 </UL>
 </UL>
 <P>
@@ -319,49 +323,50 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[40]"></a>LDR_Update</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, ldr.o(LDR_Module))
-<BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-</UL>
+<P><STRONG><a name="[45]"></a>LDR_Update</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, ldr.o(LDR_Module), UNUSED)
 
 <P><STRONG><a name="[3a]"></a>MQ2_Init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, mq2.o(MQ2_Module))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[3f]"></a>MQ2_Update</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, mq2.o(MQ2_Module))
-<BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-</UL>
+<P><STRONG><a name="[46]"></a>MQ2_Update</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, mq2.o(MQ2_Module), UNUSED)
 
-<P><STRONG><a name="[36]"></a>__main</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, main.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MQ2_Update
-<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MQ2_Init
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LDR_Update
+<P><STRONG><a name="[36]"></a>__main</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, main.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MQ2_Init
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LDR_Init
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_TEMP
-<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_HUM
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHT11_READ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[41]"></a>DHT11_READ</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, dht1.o(MYCODE))
-<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
+<P><STRONG><a name="[47]"></a>TIMER2_INIT</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, timer1.o(MYCODE), UNUSED)
+
+<P><STRONG><a name="[41]"></a>TIMER3_INIT</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, timer1.o(MYCODE), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Modes
 </UL>
 
-<P><STRONG><a name="[3c]"></a>DISPLAY_TEMP</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE))
-<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
+<P><STRONG><a name="[48]"></a>TIMER4_INIT</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, timer1.o(MYCODE), UNUSED)
+
+<P><STRONG><a name="[3c]"></a>DHT11_READ</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, dht1.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
 <LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[3d]"></a>DISPLAY_HUM</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE))
-<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
-<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[3e]"></a>DISPLAY_TEMP</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
 </UL>
 
-<P><STRONG><a name="[3e]"></a>UPDATE_Temp_Humidity</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_TEMP
-<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_HUM
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHT11_READ
+<P><STRONG><a name="[3f]"></a>DISPLAY_HUM</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UPDATE_Temp_Humidity
 </UL>
-<BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+
+<P><STRONG><a name="[3d]"></a>UPDATE_Temp_Humidity</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display2.o(MYCODE), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_TEMP
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DISPLAY_HUM
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHT11_READ
+</UL>
+
+<P><STRONG><a name="[40]"></a>UPDATE_Modes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, display3.o(MYCODE), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER3_INIT
 </UL>
 <P>
 <H3>

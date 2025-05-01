@@ -22,7 +22,7 @@ __main FUNCTION
 	BL SETUP
 	
 	;BL MQ2_Init
-	;BL LDR_Init
+	BL LDR_Init
 	
 	mov r0,#0
 	mov r3,#480

@@ -88,18 +88,7 @@ __main FUNCTION
 	;BL DISPLAY_TEMP
 	;BL DISPLAY_HUM
 	
-	BL DHT11_READ           ; Call the DHT11 read function
-	LDR R0,=CURRENT_TEMP
-	LDR R5,[R0]
-	mov r4, r5
-	mov r5,#10
-	UDIV r4,r4,r5
-	mov r4, #0
-	mov r2, #6
-	mov r0,#115  ;X position
-	mov r1,#50 ;Y Position
-	BL DISPLAY_NUMBERS
-	
+	;BL DHT11_READ           ; Call the DHT11 read function
 
 	
 MainLoop
@@ -114,17 +103,16 @@ MainLoop
 	;mov r0,#115  ;X position
 	;mov r1,#50 ;Y Position
 	;BL DISPLAY_NUMBERS
-	;BL DHT11_READ           ; Call the DHT11 read function
-	;MOV R4, R8              ; Copy full 32-bit value to R4
-	;LSR R4, R4, #24         ; Shift right 24 ? move humidity int (bits 31–24) to bits 0–7
-	;AND R4, R4, #0xFF       ; Mask out upper bits ? only keep lowest 8 bits, clear bits 8–31
-	;mov r5,#10
-	;UDIV r4,r4,r5
-	;mov r4, #0
-	;mov r2, #6
-	;mov r0,#115  ;X position
-	;mov r1,#50 ;Y Position
-	;BL DISPLAY_NUMBERS
+	BL DHT11_READ           ; Call the DHT11 read function
+	MOV R4, R8              ; Copy full 32-bit value to R4      
+	AND R4, R4, #0xFF       ; Mask out upper bits ? only keep lowest 8 bits, clear bits 8–31
+	mov r5,#10
+	UDIV r4,r4,r5
+	mov r4, #0
+	mov r2, #6
+	mov r0,#115  ;X position
+	mov r1,#50 ;Y Position
+	BL DISPLAY_NUMBERS
 	B MainLoop
 	
 	ENDFUNC

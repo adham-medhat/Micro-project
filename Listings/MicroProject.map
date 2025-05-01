@@ -1,0 +1,316 @@
+Component: Arm Compiler for Embedded 6.23 Tool: armlink [5f102400]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(MYDATA) refers (Special) to dht1.o(MYCODE) for DHT11_READ
+    main.o(MYCODE) refers (Special) to dht1.o(MYCODE) for DHT11_READ
+    main.o(MYCODE) refers to main.o(MYDATA) for ZERO_DIGIT
+    main.o(MYCODE) refers to mq2.o(MQ2_Module) for MQ2_Init
+    main.o(MYCODE) refers to ldr.o(LDR_Module) for LDR_Init
+    main.o(MYCODE) refers to display2.o(MYCODE) for DISPLAY_TEMP
+    display.o(MYCODE) refers to display.o(MYDATA) for ZERO_DIGIT
+    display2.o(MYCODE) refers to display2.o(MYDATA) for ZERO_DIGIT
+    display2.o(MYCODE) refers to dht1.o(MYCODE) for DHT11_READ
+    display3.o(MYCODE) refers to display3.o(MYDATA) for ZERO_DIGIT
+    display3.o(MYCODE) refers to dht1.o(MYCODE) for DHT11_READ
+    display3.o(MYCODE) refers to timer1.o(MYCODE) for TIMER3_INIT
+    startup_stm32f10x_md.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(RESET) refers to startup_stm32f10x_md.o(STACK) for __initial_sp
+    startup_stm32f10x_md.o(RESET) refers to startup_stm32f10x_md.o(.text) for Reset_Handler
+    startup_stm32f10x_md.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(.text) refers to system_stm32f10x.o(.text.SystemInit) for SystemInit
+    startup_stm32f10x_md.o(.text) refers to main.o(MYCODE) for __main
+    startup_stm32f10x_md.o(.text) refers to startup_stm32f10x_md.o(HEAP) for Heap_Mem
+    startup_stm32f10x_md.o(.text) refers to startup_stm32f10x_md.o(STACK) for Stack_Mem
+    system_stm32f10x.o(.text.SystemInit) refers to system_stm32f10x.o(.text.SetSysClock) for SetSysClock
+    system_stm32f10x.o(.ARM.exidx.text.SystemInit) refers to system_stm32f10x.o(.text.SystemInit) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClockTo72) for SetSysClockTo72
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClock) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.data.SystemCoreClock) for SystemCoreClock
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.rodata.AHBPrescTable) for AHBPrescTable
+    system_stm32f10x.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72) refers to system_stm32f10x.o(.text.SetSysClockTo72) for [Anonymous Symbol]
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing tft.o(MYDATA), (5188 bytes).
+    Removing tft.o(MYCODE), (608 bytes).
+    Removing definitions.o(MYDATA), (5188 bytes).
+    Removing display.o(MYDATA), (5188 bytes).
+    Removing display.o(MYCODE), (872 bytes).
+    Removing timer1.o(MYDATA), (5188 bytes).
+    Removing timer1.o(MYCODE), (244 bytes).
+    Removing dht1.o(MYDATA), (5188 bytes).
+    Removing display3.o(MYDATA), (5188 bytes).
+    Removing display3.o(MYCODE), (2672 bytes).
+    Removing mq2.o(MYDATA), (5188 bytes).
+    Removing ldr.o(MYDATA), (5188 bytes).
+    Removing system_stm32f10x.o(.text), (0 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SystemInit), (8 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClock), (8 bytes).
+    Removing system_stm32f10x.o(.text.SystemCoreClockUpdate), (290 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72), (8 bytes).
+    Removing system_stm32f10x.o(.data.SystemCoreClock), (4 bytes).
+    Removing system_stm32f10x.o(.rodata.AHBPrescTable), (16 bytes).
+
+20 unused section(s) (total 46242 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    DEFINITIONS.s                            0x00000000   Number         0  definitions.o ABSOLUTE
+    DHT1.s                                   0x00000000   Number         0  dht1.o ABSOLUTE
+    DISPLAY.s                                0x00000000   Number         0  display.o ABSOLUTE
+    DISPLAY2.s                               0x00000000   Number         0  display2.o ABSOLUTE
+    DISPLAY3.s                               0x00000000   Number         0  display3.o ABSOLUTE
+    LDR.s                                    0x00000000   Number         0  ldr.o ABSOLUTE
+    MQ2.s                                    0x00000000   Number         0  mq2.o ABSOLUTE
+    RTE/Device/STM32F103C8/startup_stm32f10x_md.s 0x00000000   Number         0  startup_stm32f10x_md.o ABSOLUTE
+    TFT.s                                    0x00000000   Number         0  tft.o ABSOLUTE
+    Timer1.s                                 0x00000000   Number         0  timer1.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    main.s                                   0x00000000   Number         0  main.o ABSOLUTE
+    system_stm32f10x.c                       0x00000000   Number         0  system_stm32f10x.o ABSOLUTE
+    RESET                                    0x08000000   Section      236  startup_stm32f10x_md.o(RESET)
+    .text                                    0x080000ec   Section       64  startup_stm32f10x_md.o(.text)
+    .text                                    0x0800012c   Section        0  heapauxi.o(.text)
+    SetSysClock                              0x08000135   Thumb Code     8  system_stm32f10x.o(.text.SetSysClock)
+    [Anonymous Symbol]                       0x08000134   Section        0  system_stm32f10x.o(.text.SetSysClock)
+    SetSysClockTo72                          0x0800013d   Thumb Code   290  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x0800013c   Section        0  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x08000260   Section        0  system_stm32f10x.o(.text.SystemInit)
+    LDR_Module                               0x080002c8   Section       88  ldr.o(LDR_Module)
+    MQ2_Module                               0x08000320   Section       88  mq2.o(MQ2_Module)
+    MYCODE                                   0x08000378   Section      992  main.o(MYCODE)
+    MYCODE                                   0x08000758   Section      232  dht1.o(MYCODE)
+    MYCODE                                   0x08000840   Section     1660  display2.o(MYCODE)
+    MYDATA                                   0x08000ebc   Section     5188  main.o(MYDATA)
+    EIGHT_DIGIT                              0x0800105c   Data          16  main.o(MYDATA)
+    FIVE_DIGIT                               0x0800106c   Data          16  main.o(MYDATA)
+    FOUR_DIGIT                               0x0800107c   Data          16  main.o(MYDATA)
+    NINE_DIGIT                               0x0800108c   Data          16  main.o(MYDATA)
+    ONE_DIGIT                                0x0800109c   Data          16  main.o(MYDATA)
+    SEVEN_DIGIT                              0x080010ac   Data          16  main.o(MYDATA)
+    SIX_DIGIT                                0x080010bc   Data          16  main.o(MYDATA)
+    THREE_DIGIT                              0x080010cc   Data          16  main.o(MYDATA)
+    TWO_DIGIT                                0x080010dc   Data          16  main.o(MYDATA)
+    ZERO_DIGIT                               0x080010ec   Data          16  main.o(MYDATA)
+    percentage                               0x080011d0   Data          68  main.o(MYDATA)
+    celsius_25                               0x08001214   Data          80  main.o(MYDATA)
+    MYDATA                                   0x08002300   Section     5188  display2.o(MYDATA)
+    E_CHAR                                   0x08002340   Data          16  display2.o(MYDATA)
+    H_CHAR                                   0x08002370   Data          16  display2.o(MYDATA)
+    M_CHAR                                   0x080023c0   Data          16  display2.o(MYDATA)
+    P_CHAR                                   0x080023e0   Data          16  display2.o(MYDATA)
+    T_CHAR                                   0x08002420   Data          16  display2.o(MYDATA)
+    U_CHAR                                   0x08002430   Data          16  display2.o(MYDATA)
+    EIGHT_DIGIT                              0x080024a0   Data          16  display2.o(MYDATA)
+    FIVE_DIGIT                               0x080024b0   Data          16  display2.o(MYDATA)
+    FOUR_DIGIT                               0x080024c0   Data          16  display2.o(MYDATA)
+    NINE_DIGIT                               0x080024d0   Data          16  display2.o(MYDATA)
+    ONE_DIGIT                                0x080024e0   Data          16  display2.o(MYDATA)
+    SEVEN_DIGIT                              0x080024f0   Data          16  display2.o(MYDATA)
+    SIX_DIGIT                                0x08002500   Data          16  display2.o(MYDATA)
+    THREE_DIGIT                              0x08002510   Data          16  display2.o(MYDATA)
+    TWO_DIGIT                                0x08002520   Data          16  display2.o(MYDATA)
+    ZERO_DIGIT                               0x08002530   Data          16  display2.o(MYDATA)
+    DOT                                      0x08002540   Data          16  display2.o(MYDATA)
+    Heap_Mem                                 0x20000000   Data         512  startup_stm32f10x_md.o(HEAP)
+    HEAP                                     0x20000000   Section      512  startup_stm32f10x_md.o(HEAP)
+    Stack_Mem                                0x20000200   Data        1024  startup_stm32f10x_md.o(STACK)
+    STACK                                    0x20000200   Section     1024  startup_stm32f10x_md.o(STACK)
+    __initial_sp                             0x20000600   Data           0  startup_stm32f10x_md.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors_Size                           0x000000ec   Number         0  startup_stm32f10x_md.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_stm32f10x_md.o(RESET)
+    Reset_Handler                            0x080000ed   Thumb Code     8  startup_stm32f10x_md.o(.text)
+    __Vectors_End                            0x080000ec   Data           0  startup_stm32f10x_md.o(RESET)
+    NMI_Handler                              0x080000f5   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    HardFault_Handler                        0x080000f7   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    MemManage_Handler                        0x080000f9   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    BusFault_Handler                         0x080000fb   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    UsageFault_Handler                       0x080000fd   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    SVC_Handler                              0x080000ff   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    DebugMon_Handler                         0x08000101   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    PendSV_Handler                           0x08000103   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    SysTick_Handler                          0x08000105   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    ADC1_2_IRQHandler                        0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    CAN1_RX1_IRQHandler                      0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    CAN1_SCE_IRQHandler                      0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel1_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel2_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel3_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel4_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel5_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel6_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel7_IRQHandler                 0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI0_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI15_10_IRQHandler                     0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI1_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI2_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI3_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI4_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI9_5_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    FLASH_IRQHandler                         0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C1_ER_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C1_EV_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C2_ER_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C2_EV_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    PVD_IRQHandler                           0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RCC_IRQHandler                           0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RTCAlarm_IRQHandler                      0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RTC_IRQHandler                           0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    SPI1_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    SPI2_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TAMPER_IRQHandler                        0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_BRK_IRQHandler                      0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_CC_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_TRG_COM_IRQHandler                  0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_UP_IRQHandler                       0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM2_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM3_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM4_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USART1_IRQHandler                        0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USART2_IRQHandler                        0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USART3_IRQHandler                        0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USBWakeUp_IRQHandler                     0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USB_HP_CAN1_TX_IRQHandler                0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USB_LP_CAN1_RX0_IRQHandler               0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    WWDG_IRQHandler                          0x08000107   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    __user_initial_stackheap                 0x08000109   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    __use_two_region_memory                  0x0800012d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0800012f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x08000131   Thumb Code     2  heapauxi.o(.text)
+    SystemInit                               0x08000261   Thumb Code   102  system_stm32f10x.o(.text.SystemInit)
+    LDR_Init                                 0x080002c9   Thumb Code     0  ldr.o(LDR_Module)
+    LDR_Update                               0x080002f5   Thumb Code     0  ldr.o(LDR_Module)
+    MQ2_Init                                 0x08000321   Thumb Code     0  mq2.o(MQ2_Module)
+    MQ2_Update                               0x0800034d   Thumb Code     0  mq2.o(MQ2_Module)
+    __main                                   0x080006e1   Thumb Code   110  main.o(MYCODE)
+    DHT11_READ                               0x08000759   Thumb Code     0  dht1.o(MYCODE)
+    DISPLAY_TEMP                             0x08000dbb   Thumb Code     0  display2.o(MYCODE)
+    DISPLAY_HUM                              0x08000e0d   Thumb Code     0  display2.o(MYCODE)
+    UPDATE_Temp_Humidity                     0x08000e51   Thumb Code     0  display2.o(MYCODE)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x080000ed
+
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00003744, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003744, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x000000ec   Data   RO           43    RESET               startup_stm32f10x_md.o
+    0x080000ec   0x080000ec   0x00000040   Code   RO           44  * .text               startup_stm32f10x_md.o
+    0x0800012c   0x0800012c   0x00000006   Code   RO           67    .text               c_w.l(heapauxi.o)
+    0x08000132   0x08000132   0x00000002   PAD
+    0x08000134   0x08000134   0x00000008   Code   RO           51    .text.SetSysClock   system_stm32f10x.o
+    0x0800013c   0x0800013c   0x00000122   Code   RO           55    .text.SetSysClockTo72  system_stm32f10x.o
+    0x0800025e   0x0800025e   0x00000002   PAD
+    0x08000260   0x08000260   0x00000066   Code   RO           49    .text.SystemInit    system_stm32f10x.o
+    0x080002c6   0x080002c6   0x00000002   PAD
+    0x080002c8   0x080002c8   0x00000058   Code   RO           38    LDR_Module          ldr.o
+    0x08000320   0x08000320   0x00000058   Code   RO           34    MQ2_Module          mq2.o
+    0x08000378   0x08000378   0x000003e0   Code   RO            2  * MYCODE              main.o
+    0x08000758   0x08000758   0x000000e8   Code   RO           22    MYCODE              dht1.o
+    0x08000840   0x08000840   0x0000067c   Code   RO           26    MYCODE              display2.o
+    0x08000ebc   0x08000ebc   0x00001444   Data   RO            1    MYDATA              main.o
+    0x08002300   0x08002300   0x00001444   Data   RO           25    MYDATA              display2.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08003744, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x08003744, Size: 0x00000600, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000        -       0x00000200   Zero   RW           42    HEAP                startup_stm32f10x_md.o
+    0x20000200        -       0x00000400   Zero   RW           41    STACK               startup_stm32f10x_md.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       232         14          0          0          0        248   dht1.o
+      1660        112       5188          0          0        744   display2.o
+        88          8          0          0          0        200   ldr.o
+       992         70       5188          0          0        672   main.o
+        88          8          0          0          0        200   mq2.o
+        64         26        236          0       1536        776   startup_stm32f10x_md.o
+       400          0          0          0          0       2963   system_stm32f10x.o
+
+    ----------------------------------------------------------------------
+      3528        238      10612          0       1536       5803   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         6          0          0          0          0        152   heapauxi.o
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+         6          0          0          0          0        152   c_w.l
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      3536        238      10612          0       1536       5903   Grand Totals
+      3536        238      10612          0       1536       5903   ELF Image Totals
+      3536        238      10612          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                14148 (  13.82kB)
+    Total RW  Size (RW Data + ZI Data)              1536 (   1.50kB)
+    Total ROM Size (Code + RO Data + RW Data)      14148 (  13.82kB)
+
+==============================================================================
+

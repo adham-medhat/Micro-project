@@ -108,7 +108,6 @@ MainLoop
 	AND R4, R4, #0xFF       ; Mask out upper bits ? only keep lowest 8 bits, clear bits 8–31
 	mov r5,#10
 	UDIV r4,r4,r5
-	mov r4, #0
 	mov r2, #6
 	mov r0,#115  ;X position
 	mov r1,#50 ;Y Position

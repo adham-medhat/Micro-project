@@ -99,9 +99,7 @@ __main FUNCTION
 	;mov r0,#180 ;X position
 	;mov r1,#50 ;Y position
 	;BL DISPLAY_NUMBERS
-	;BL UPDATE_Modes 
-	;BL DISPLAY_TEMP
-	;BL DISPLAY_HUM
+
 	
 	;BL DHT11_READ           ; Call the DHT11 read function
     ; Write back to GPIOB_ODR
@@ -114,11 +112,58 @@ __main FUNCTION
 
 
 MainLoop
-	;mov R4, #5
+	BL DHT11_READ
+	;10s of humidity
+	AND R1, R1, #0xFF 
+	;mov r1,#62
+	mov r5,#10
+	udiv r4,r1,r5
+	;mov r4,#3
+	mov r2, #6
+	mov r0,#115  ;X position
+	mov r1,#50 ;Y Position
+	BL DISPLAY_NUMBERS
+	;1s of humidity
+	AND R1, R1, #0xFF 
+	mul r6,r4,r5
+	sub r4,r1,r6
+	mov r2, #6
+	mov r0,#180 ;X position
+	mov r1,#50 ;Y position
+	BL DISPLAY_NUMBERS
+	;10s of temp
+	LSR R1, R8, #16
+	AND R1, R1, #0xFF 
+	;mov r1,#62
+	mov r5,#10
+	udiv r4,r1,r5
+	;mov r4,#3
+	mov r2, #6
+	mov r0,#115  ;X position
+	mov r1,#50 ;Y Position
+	BL DISPLAY_NUMBERS
+	;1s of temp
+	LSR R1, R8, #16
+	AND R1, R1, #0xFF 
+	mul r6,r4,r5
+	sub r4,r1,r6
+	mov r2, #6
+	mov r0,#180 ;X position
+	mov r1,#50 ;Y position
+	BL DISPLAY_NUMBERS
+	;1s of humidity
+	;LSR R1, R8, #0
+	;AND R1, R1, #0xFF 
+	;mov r1,#62
+	;mul r4,r4,r5
+	;sub r4,r1,r4
+	;mov r4,#2
 	;mov r2, #6
-	;mov r0,#115  ;X position
-	;mov r1,#50 ;Y Position
+	;mov r0,#180 ;X position
+	;mov r1,#50 ;Y position
 	;BL DISPLAY_NUMBERS
+
+	
 	;BL 	delay_1_second
 	;MOV R4, #4
 	;mov r2, #6
@@ -139,7 +184,7 @@ MainLoop
 	;mov r4,#3
 	;mov r2, #6
 	;mov r0,#115  ;X position
-	;;mov r1,#220  ;Y Position
+	;mov r1,#220  ;Y Position
 	;BL DISPLAY_NUMBERS
 	
 	

@@ -439,6 +439,11 @@
               <FileType>2</FileType>
               <FilePath>.\FlameSensor.s</FilePath>
             </File>
+            <File>
+              <FileName>IR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IR.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

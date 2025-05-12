@@ -48,19 +48,19 @@ MQ2_Update
 		TST R1, #(1 << 5)                ; Test if PB5 is HIGH or LOW
 
     ; If PB5 is HIGH (no smoke), skip setting PB0
-		BNE NO_SMOKE_DETECTED            ; Branch if bit 5 is nonzero (no smoke)
-
-    ; Smoke detected (PB5 is LOW), set PB0 HIGH
-		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
-		LDR R1, [R0]                ; Read current state
-		ORR R1, R1, #0x01           ; TURN ON PB0 (bit 0)
-		STR R1, [R0]                ; Write back to GPIOB_ODR
-		B DONE                           ; Skip the no-smoke path
-
-NO_SMOKE_DETECTED
+		BNE SMOKE_DETECTED            ; Branch if bit 5 is nonzero (no smoke)
 		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
 		LDR R1, [R0]                ; Read current state
 		BIC R1, R1, #0x01          ; TURN OFF PB0 (bit 0)
+		STR R1, [R0]                ; Write back to GPIOB_ODR
+		B DONE  
+    ; Smoke detected (PB5 is LOW), set PB0 HIGH
+
+
+SMOKE_DETECTED                         ; Skip the no-smoke path
+		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
+		LDR R1, [R0]                ; Read current state
+		ORR R1, R1, #0x01           ; TURN ON PB0 (bit 0)
 		STR R1, [R0]                ; Write back to GPIOB_ODR
 		B DONE                           ; Skip the no-smoke path
     ; Optionally, clear PB0 if no smoke (uncomment if desired)

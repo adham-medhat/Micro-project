@@ -48,7 +48,7 @@ Flame_Update
 		TST R1, #(1 << 4)               ; Test if PB4 is HIGH or LOW
 
     ; If PB5 is HIGH (no flame), skip setting PB0
-		BNE FLAME_DETECTED            ; Branch if bit  is nonzero (no smoke)
+		BNE FLAME_DETECTED            ; Branch if bit  is nonzero 
 
     ; Flame detected (PB5 is LOW), set PB0 HIGH
 		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register

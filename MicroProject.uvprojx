@@ -415,16 +415,6 @@
               <FilePath>.\DHT1.s</FilePath>
             </File>
             <File>
-              <FileName>DISPLAY2.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\DISPLAY2.s</FilePath>
-            </File>
-            <File>
-              <FileName>DISPLAY3.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\DISPLAY3.s</FilePath>
-            </File>
-            <File>
               <FileName>MQ2.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\MQ2.s</FilePath>
@@ -438,11 +428,6 @@
               <FileName>FlameSensor.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\FlameSensor.s</FilePath>
-            </File>
-            <File>
-              <FileName>IR.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\IR.c</FilePath>
             </File>
           </Files>
         </Group>

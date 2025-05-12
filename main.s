@@ -3,9 +3,9 @@
 	;INCLUDE DHT1.s
 	;INCLUDE Timer1.s
 	IMPORT DHT11_READ
-    IMPORT UPDATE_Temp_Humidity
-	IMPORT DISPLAY_HUM
-	IMPORT DISPLAY_TEMP
+    ;IMPORT UPDATE_Temp_Humidity
+	;IMPORT DISPLAY_HUM
+	;IMPORT DISPLAY_TEMP
 	IMPORT  MQ2_Init
 	IMPORT  MQ2_Update
 	IMPORT  LDR_Init
@@ -47,8 +47,8 @@ __main FUNCTION
 	BL DRAW_RECTANGLE_FILLED
 	
 	
-	mov r0, #280
-	mov r1, #200
+	mov r0, #280 ; X value
+	mov r1, #200 ; Y value
 	mov r2, #4
 	mov r6, #25
 	mov r11, #25
@@ -63,6 +63,12 @@ __main FUNCTION
 	LDR r3, =percentage
 	BL DRAW_IMG
 	
+	;mov r0,#0
+	;mov r3,#480
+	;mov r1,#0
+	;mov r4,#320
+	;mov r10,#RED
+	;BL DRAW_RECTANGLE_FILLED
 	
 	;Tens position of Temprature
 	;mov r4,#2
@@ -112,8 +118,10 @@ __main FUNCTION
 
 
 MainLoop
+	
 	BL DHT11_READ
 	;10s of humidity
+	mov r1,r8
 	AND R1, R1, #0xFF 
 	;mov r1,#62
 	mov r5,#10
@@ -124,6 +132,7 @@ MainLoop
 	mov r1,#50 ;Y Position
 	BL DISPLAY_NUMBERS
 	;1s of humidity
+	mov r1,r8
 	AND R1, R1, #0xFF 
 	mul r6,r4,r5
 	sub r4,r1,r6
@@ -140,7 +149,7 @@ MainLoop
 	;mov r4,#3
 	mov r2, #6
 	mov r0,#115  ;X position
-	mov r1,#50 ;Y Position
+	mov r1,#220 ;Y Position
 	BL DISPLAY_NUMBERS
 	;1s of temp
 	LSR R1, R8, #16
@@ -149,7 +158,7 @@ MainLoop
 	sub r4,r1,r6
 	mov r2, #6
 	mov r0,#180 ;X position
-	mov r1,#50 ;Y position
+	mov r1,#220 ;Y position
 	BL DISPLAY_NUMBERS
 	;1s of humidity
 	;LSR R1, R8, #0

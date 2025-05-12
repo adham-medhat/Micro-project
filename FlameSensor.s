@@ -1,8 +1,9 @@
   ;; MQ2.s — standalone, self-contained
-		INCLUDE DEFINITIONS.s
+		INCLUDE TFT.s
         AREA    Flame_Module, CODE, READONLY
         EXPORT  Flame_Init
         EXPORT  Flame_Update
+		;IMPORT DRAW_RECTANGLE_FILLED
 
 ; Base addresses for F1 (STM32F103C8T6)
 ;GPIOB_BASE     EQU     0x40010C00

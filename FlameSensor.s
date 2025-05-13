@@ -47,20 +47,32 @@ Flame_Update
     ; Check PB5 (bit 5)
 		TST R1, #(1 << 4)               ; Test if PB4 is HIGH or LOW
 
-    ; If PB5 is HIGH (no flame), skip setting PB0
+    ; If PB5 is HIGH (flame), skip to setting PB0
 		BNE FLAME_DETECTED            ; Branch if bit  is nonzero 
 
-    ; Flame detected (PB5 is LOW), set PB0 HIGH
+    ; Flame not detected (PB5 is LOW), set PB0 low
 		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
 		LDR R1, [R0]                ; Read current state
 		BIC R1, R1, #0x01          ; TURN OFF PB0 (bit 0)
 		STR R1, [R0]                ; Write back to GPIOB_ODR
+		mov r0,#430
+		mov r3,#460
+		mov r1,#20
+		mov r4,#50
+		mov r10,#WHITE
+		BL DRAW_RECTANGLE_FILLED
 		B DONE 
 FLAME_DETECTED
 		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
 		LDR R1, [R0]                ; Read current state
 		ORR R1, R1, #0x01           ; TURN ON PB0 (bit 0)
 		STR R1, [R0]                ; Write back to GPIOB_ODR
+		mov r0,#430
+		mov r3,#460
+		mov r1,#20
+		mov r4,#50
+		mov r10,#RED
+		BL DRAW_RECTANGLE_FILLED
 		B DONE 
 
  		; Skip the no-smoke path

@@ -1,5 +1,5 @@
   ;; MQ2.s — standalone, self-contained
-		INCLUDE DEFINITIONS.s
+		INCLUDE TFT.s
         AREA    MQ2_Module, CODE, READONLY
         EXPORT  MQ2_Init
         EXPORT  MQ2_Update
@@ -47,22 +47,35 @@ MQ2_Update
     ; Check PB5 (bit 5)
 		TST R1, #(1 << 5)                ; Test if PB5 is HIGH or LOW
 
-    ; If PB5 is HIGH (no smoke), skip setting PB0
+    ; If PB5 is HIGH (smoke), skip setting PB0
 		BNE SMOKE_DETECTED            ; Branch if bit 5 is nonzero (no smoke)
-		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
-		LDR R1, [R0]                ; Read current state
-		BIC R1, R1, #0x01          ; TURN OFF PB0 (bit 0)
-		STR R1, [R0]                ; Write back to GPIOB_ODR
-		B DONE  
-    ; Smoke detected (PB5 is LOW), set PB0 HIGH
-
-
-SMOKE_DETECTED                         ; Skip the no-smoke path
 		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
 		LDR R1, [R0]                ; Read current state
 		ORR R1, R1, #0x01           ; TURN ON PB0 (bit 0)
 		STR R1, [R0]                ; Write back to GPIOB_ODR
-		B DONE                           ; Skip the no-smoke path
+		mov r0,#430
+		mov r3,#460
+		mov r1,#80
+		mov r4,#110
+		mov r10,#BLUE
+		BL DRAW_RECTANGLE_FILLED
+		B DONE  
+    ; Smoke detected (PB5 is high), set PB0 HIGH
+
+
+SMOKE_DETECTED                         ; Skip the no-smoke path
+		
+		LDR R0, =(0x40010C0C)          ; GPIOB Output Data Register
+		LDR R1, [R0]                ; Read current state
+		BIC R1, R1, #0x01          ; TURN OFF PB0 (bit 0)
+		STR R1, [R0]                ; Write back to GPIOB_ODR
+		mov r0,#430
+		mov r3,#460
+		mov r1,#80
+		mov r4,#110
+		mov r10,#WHITE
+		BL DRAW_RECTANGLE_FILLED
+		B DONE                           
     ; Optionally, clear PB0 if no smoke (uncomment if desired)
     ; LDR R0, =GPIOB_ODR
     ; LDR R1, [R0]
@@ -71,3 +84,4 @@ SMOKE_DETECTED                         ; Skip the no-smoke path
 
 DONE
 		POP {R0-R2, PC}                  ; Restore registers and return
+		END
